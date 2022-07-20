@@ -30,11 +30,13 @@ public class test_login {
         //
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+
         driver.get("https://generator.email/");
         String gen_email = driver.findElement(By.cssSelector("span#email_ch_text")).getText();
         sleep(5000);
         //https://stackoverflow.com/questions/17547473/how-to-open-a-new-tab-using-selenium-webdriver-in-java
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+
         System.out.println(tabs);
         driver.switchTo().window(tabs.get(1));
         driver.close();
